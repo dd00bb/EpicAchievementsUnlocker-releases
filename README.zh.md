@@ -1,4 +1,6 @@
-# Epic 成就解锁器 使用说明
+ [English](README.md) | **中文**
+ 
+ # Epic 成就解锁器 使用说明
 
 > **Bilibili：IPhoneP40Pro　|　小黑盒：letmethink**
 >
