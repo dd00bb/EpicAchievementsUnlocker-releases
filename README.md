@@ -1,154 +1,144 @@
-[README.md](https://github.com/user-attachments/files/34133377/README.md)
-# Epic 成就解锁器 使用说明
+English | **[中文](README.zh.md)**
 
-> **Bilibili：IPhoneP40Pro　|　小黑盒：letmethink**
+# Epic Achievement Unlocker — User Guide
+
+> **Bilibili: IPhoneP40Pro | Xiaoheihe: letmethink**
 >
-> ⚠️ **本软件完全免费！** 如果你花钱买到了本工具，说明你被骗了，请立即举报卖家。
-> 本软件仅支持正版 Epic / Epic 成就体系游戏，请支持游戏开发者。
+> ⚠️ **This software is completely FREE!** If you paid for this tool, you have been scammed — please report the seller immediately.
+> This software only supports genuine Epic / games using the Epic achievements system. Please support game developers.
 
-
-**注意：**
-
-- 需要管理员身份打开解锁器，两个解锁成就按钮才会生效。
-
-- 选择游戏程序和EOSSDK-Win64-Shipping.dll时游戏**必须处于关闭状态**。
-
-- 替换完成后**自己手动从Epic启动游戏**，本工具不会帮你启动游戏。
-
-- 如果点错了选成别的 dll，关闭解锁器重新操作。
-
-- 一定要先关闭游戏，最后再关闭解锁器。
+**Notes:**
+- Run the unlocker as **Administrator**, otherwise the two "Unlock Achievements" buttons won't work.
+- When selecting the game executable and `EOSSDK-Win64-Shipping.dll`, the game **must be closed**.
+- After replacement, **launch the game manually from Epic** — this tool will not launch it for you.
+- If you pick the wrong DLL, close the unlocker and start over.
+- Always close the game first, then close the unlocker.
 
 ---
 
-## 一、软件简介
+## 1. Introduction
 
-本工具用于解锁 Epic 平台游戏中**已完成条件但未正常统计**的成就，也可以用于补齐存档丢失导致的成就缺失。
-
----
-
-## 二、运行环境
-
-| 项目 | 要求 |
-|------|------|
-| 操作系统 | Windows 10 / 11（64 位） |
-| 游戏平台 | Epic Games Store，或使用 Epic 在线服务的游戏 |
-| 权限 | 建议以**管理员身份**运行本工具（解锁成就按钮需要） |
-| 杀毒软件 | 如被误报请添加信任（修改 dll 属于敏感操作，误报属正常现象） |
+This tool unlocks achievements in Epic platform games that **have met their unlock conditions but were not counted properly**, and can also restore achievements lost due to missing/corrupted save data.
 
 ---
 
-## 三、重点：虚幻引擎游戏如何选择正确的 exe
+## 2. System Requirements
 
-> **这一步是最容易出错的地方，请务必仔细阅读！**
+| Item | Requirement |
+|------|-------------|
+| Operating System | Windows 10 / 11 (64-bit) |
+| Game Platform | Epic Games Store, or games using Epic Online Services |
+| Privileges | Recommended to run this tool as **Administrator** (required for the unlock buttons) |
+| Antivirus Software | If flagged, add the tool to your whitelist (modifying DLLs is a sensitive operation — false positives are normal) |
 
-虚幻引擎（Unreal Engine）制作的游戏，目录里往往有**一大堆 exe**：启动器、崩溃收集器、UnityPak、UnrealEditor 之类，随便选一个就会导致后续找不到正确的游戏目录。
+---
 
-### ✅ 正确的选择
+## 3. Important: How to Choose the Correct EXE for Unreal Engine Games
 
-选择名字形如：
+> **This is the step where mistakes happen most often — read carefully!**
 
-```
-游戏名-Win64-Shipping.exe
-```
+Games made with Unreal Engine often contain **a huge pile of EXE files** in their directory: launchers, crash handlers, UnityPak, UnrealEditor, and so on. Picking the wrong one will cause the tool to fail to find the correct game directory.
 
-例如：
+### ✅ Correct choice
 
-| 游戏 | 应选择的文件 |
-|------|--------------|
-| 某游戏叫 `MyGame` | `MyGame\Binaries\Win64\MyGame-Win64-Shipping.exe` |
-| 艾尔登法环式命名 | `xxx\Binaries\Win64\xxx-Win64-Shipping.exe` |
-| 国产游戏 `XYZ` | `XYZ\Binaries\Win64\XYZ-Win64-Shipping.exe` |
+Select the file named like:
 
-它通常位于游戏目录下的 **`Binaries\Win64\`** 文件夹中。
+~~~text
+GameName-Win64-Shipping.exe
+~~~
 
-### ❌ 不要选择这些
+For example:
 
-- `启动游戏.exe`、`启动器.exe`、`Launcher.exe`（这些只是启动器）
-- `UnityCrashHandler64.exe`、`CrashReportClient.exe`（崩溃报告程序）
-- 任何带 `Editor`、`Pak`、`Installer`、`Unreal` 字样的 exe
+| Game | File to select |
+|------|----------------|
+| A game called `MyGame` | `MyGame\Binaries\Win64\MyGame-Win64-Shipping.exe` |
+| Elden Ring–style naming | `xxx\Binaries\Win64\xxx-Win64-Shipping.exe` |
+| Chinese game `XYZ` | `XYZ\Binaries\Win64\XYZ-Win64-Shipping.exe` |
 
-### 💡 找不到的偷懒办法
+It is usually located in the **`Binaries\Win64\`** folder under the game directory.
 
-打开游戏安装根目录，在右上角搜索框直接搜索：
+### ❌ Do NOT select these
 
-```
+- `启动游戏.exe`, `启动器.exe`, `Launcher.exe` (these are just launchers)
+- `UnityCrashHandler64.exe`, `CrashReportClient.exe` (crash reporters)
+- Any EXE with `Editor`, `Pak`, `Installer`, or `Unreal` in its name
+
+### 💡 Quick trick if you can't find it
+
+Open the game's installation root folder and search directly in the top-right search box:
+
+~~~text
 Win64-Shipping.exe
-```
+~~~
 
-搜出来的（一般只有一个）就是要选的那个。如果搜出多个，选**和游戏同名的那个**，并且确认它所在的路径包含 `Binaries\Win64`。
+The result (usually only one) is the file you need. If multiple results appear, pick the one **with the same name as the game**, and confirm its path contains `Binaries\Win64`.
 
-### 📁 完整目录结构示例
+### 📁 Full directory structure example
 
-```
-E:\Games\MyGame\                    ← 游戏根目录
-├── MyGame.exe                      ← ❌ 这通常是启动器，不要选
+~~~text
+E:\Games\MyGame\          ← Game root directory
+├── MyGame.exe            ← ❌ This is usually a launcher, don't pick it
 ├── Engine\
 └── MyGame\
     └── Binaries\
         └── Win64\
-            ├── MyGame-Win64-Shipping.exe      ← ✅ 就选它！
-            └── EOSSDK-Win64-Shipping.dll      ← EOSSDK 一般也在这
-```
+            ├── MyGame-Win64-Shipping.exe    ← ✅ Pick this one!
+            └── EOSSDK-Win64-Shipping.dll    ← EOSSDK is usually here too
+~~~
 
-### 非 UE 游戏（如 Unity 游戏）
+### Non-UE games (e.g., Unity games)
 
-选择游戏根目录下与游戏同名的主 exe 即可。前提是游戏使用了 Epic 在线服务（目录里能找到 `EOSSDK-Win64-Shipping.dll`），否则本工具无法工作。
-
-
-
+Select the main EXE in the game's root directory that has the same name as the game. The prerequisite is that the game uses Epic Online Services (i.e., you can find `EOSSDK-Win64-Shipping.dll` in the directory), otherwise this tool will not work.
 
 ---
 
-## 四、成就列表与解锁操作
+## 4. Achievement List & Unlock Operations
 
-### 勾选成就
+### Selecting achievements
 
-- 单击复选框勾选想要的成就，鼠标悬停可查看成就描述。
-- 【全选】/【全不选】/【反选】按钮可一键操作。
+- Click the checkboxes to select the achievements you want; hover over an achievement to view its description.
+- The **Select All / Deselect All / Invert** buttons allow one-click operations.
 
-### 解锁成就（游戏运行中操作）
+### Unlocking achievements (operate while the game is running)
 
-- ⚠️ 这两个按钮都需要**游戏正在运行**时点击才有效。
-- 点击后会自动切回游戏窗口，稍等几秒即可看到成就弹窗。
-- 两个按钮对应的快捷键：**解锁全部成就 = `U`**，**解锁选定成就 = `I`**。
-- 如果没反应，应该是没有以管理员身份运行，回到游戏内手动按一次对应快捷键（`U` 或 `I`）。
-
----
-
-
-
-## 五、常见问题（FAQ）
-
-**Q1：成就列表一直不出现？**
-- 确认游戏exe 选的是 `游戏名-Win64-Shipping.exe`（见第三节）；
-- 确认 EOSSDK 是在 `Binaries\Win64\` 下替换成功的；
-- 确认游戏确实使用了 Epic 在线服务。
-- 有些游戏虽然解锁器不显示成就，但是仍然可以解锁全部成就
-
-**Q2：点了解锁没反应？**
-- 确认游戏正在运行且未失去响应；
-- 确认解锁器是以管理员身份运行。
-
-**Q3：解锁的成就没在 Epic 平台显示？**
-- 平台成就同步有延迟，重启 Epic 客户端或等几分钟；
-- 确认游戏是正版且登录了 Epic 账号。
-
-**Q4：软件被杀毒软件报毒？**
-- 误报正常。将本工具加入白名单即可。
-
-**Q5：会不会封号？**
-不排除任何在线服务类工具都存在理论风险。请自行斟酌，建议**不要在竞技类/有反作弊的在线游戏中使用**。
+- ⚠️ Both of these buttons only work when clicked **while the game is running**.
+- After clicking, the tool will automatically switch back to the game window; wait a few seconds and you should see the achievement popup.
+- Hotkeys for the two buttons: **Unlock All Achievements = `U`**, **Unlock Selected Achievements = `I`**.
+- If nothing happens, you are probably not running as Administrator. Go back into the game and press the corresponding hotkey (`U` or `I`) manually once.
 
 ---
 
-## 六、注意事项与免责声明
+## 5. Frequently Asked Questions (FAQ)
 
-1. 本软件仅供学习交流，**禁止倒卖**。本软件免费，任何收费行为均与作者无关。
-2. 请在正版游戏上使用，支持游戏开发者。
-3. 使用本工具产生的一切后果由使用者自行承担，作者不对账号风险、存档损坏等负责。
-4. 使用前建议备份游戏存档。
+**Q1: The achievement list never appears?**
+- Confirm that the game EXE you selected is `GameName-Win64-Shipping.exe` (see Section 3);
+- Confirm that EOSSDK was replaced successfully under `Binaries\Win64\`;
+- Confirm that the game actually uses Epic Online Services.
+- Note: for some games, the unlocker may not display the achievement list, but "Unlock All Achievements" still works.
+
+**Q2: Nothing happens after clicking Unlock?**
+- Make sure the game is running and not frozen;
+- Make sure the unlocker is running as Administrator.
+
+**Q3: Unlocked achievements don't show up on the Epic platform?**
+- Platform achievement sync may be delayed — restart the Epic client or wait a few minutes;
+- Make sure the game is genuine and you are logged into your Epic account.
+
+**Q4: The software is flagged by antivirus?**
+- False positives are normal. Simply add this tool to your whitelist.
+
+**Q5: Could I get banned?**
+- As with any tool that interacts with online services, some theoretical risk cannot be ruled out. Please use your own judgment. It is recommended **not to use this tool in competitive games or online games with anti-cheat systems**.
 
 ---
 
-如果本工具对你有帮助，欢迎点击软件内的【捐赠支持】请作者喝杯咖啡 ❤
+## 6. Notices & Disclaimer
+
+1. This software is for learning and communication purposes only. **Reselling is strictly prohibited.** This software is free — any charging behavior has nothing to do with the author.
+2. Please use this tool on genuine games and support the game developers.
+3. All consequences arising from the use of this tool are borne by the user. The author is not responsible for account risks, save corruption, or anything else.
+4. It is recommended to back up your game saves before use.
+
+---
+
+If this tool helps you, feel free to click [Donate] inside the app to buy the author a coffee ❤
